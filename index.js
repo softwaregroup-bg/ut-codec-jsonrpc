@@ -57,7 +57,7 @@ module.exports = class JsonRpc {
             notification: 'notification'
         }[json.id ? payloadMember : 'notification'];
         if ($meta.mtid === 'request') {
-            if (json.method !== 'string' || json.method === '') {
+            if (typeof json.method !== 'string' || json.method === '') {
                 throw errors.invalidMethod('Received invalid method type or empty');
             }
             $meta.method = json.method;
@@ -77,7 +77,7 @@ module.exports = class JsonRpc {
         };
         switch ($meta.mtid) {
             case 'request':
-                $meta.trace = this.getId(context);
+                $meta.trace = $meta.trace || this.getId(context);
                 json.id = $meta.trace;
                 json.params = msg;
                 break;
