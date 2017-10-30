@@ -1,6 +1,6 @@
 {
   "name": "ut-codec-jsonrpc",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "main": "./index.js",
   "dependencies": {
     "ut-error": "^5.4.9"

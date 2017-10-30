@@ -1,3 +1,13 @@
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.1.0...v6.2.0) (2017-10-30)
+
+
+### Features
+
+* pass the trace value from outside ([#1](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/issues/1)) ([aa08c84](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/commit/aa08c84))
+
+
+
 <a name="6.1.0"></a>
 # 6.1.0 (2017-10-23)
 
