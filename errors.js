@@ -1,13 +1,14 @@
 'use strict';
-const create = require('ut-error').define;
-const jsonRPC = create('jsonRPCCodec');
-const invalidJson = create('invalidJson', jsonRPC, 'Invalid json');
+module.exports = defineError => {
+    const jsonRPC = defineError('jsonRPCCodec');
+    const invalidJson = defineError('invalidJson', jsonRPC, 'Invalid json');
 
-module.exports = {
-    jsonRPC,
-    invalidJson,
-    invalidVersion: create('invalidVersion', invalidJson, 'Invalid jsonrpc version'),
-    invalidMethod: create('invalidMethod', invalidJson, 'Invalid or missing method'),
-    invalidPayload: create('invalidPayload', invalidJson, 'Invalid or missing jsonrpc payload'),
-    invalidMessageID: create('invalidMessageID', invalidJson, 'Invalid message id')
+    return {
+        jsonRPC,
+        invalidJson,
+        invalidVersion: defineError('invalidVersion', invalidJson, 'Invalid jsonrpc version'),
+        invalidMethod: defineError('invalidMethod', invalidJson, 'Invalid or missing method'),
+        invalidPayload: defineError('invalidPayload', invalidJson, 'Invalid or missing jsonrpc payload'),
+        invalidMessageID: defineError('invalidMessageID', invalidJson, 'Invalid message id')
+    };
 };
