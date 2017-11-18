@@ -1,3 +1,13 @@
+<a name="6.2.1"></a>
+## [6.2.1](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.2.0...v6.2.1) (2017-11-18)
+
+
+### Bug Fixes
+
+* use defineError passed from port ([c0c8de7](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/commit/c0c8de7))
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.1.0...v6.2.0) (2017-10-30)
 
