@@ -2,7 +2,7 @@
   "name": "ut-codec-jsonrpc",
   "version": "6.2.1",
   "main": "./index.js",
-  "dependencies": {
+  "peerDependencies": {
     "ut-error": "^5.4.9"
   },
   "devDependencies": {
