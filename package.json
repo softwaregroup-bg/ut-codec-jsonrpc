@@ -1,6 +1,6 @@
 {
   "name": "ut-codec-jsonrpc",
-  "version": "6.3.0-rc-cubalibre.0",
+  "version": "6.3.0",
   "main": "./index.js",
   "peerDependencies": {
     "ut-error": "^5.4.9"

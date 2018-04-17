@@ -1,3 +1,13 @@
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.2.1...v6.3.0) (2018-04-17)
+
+
+### Bug Fixes
+
+* ut-error is peer dep ([11af72c](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/commit/11af72c))
+
+
+
 <a name="6.2.1"></a>
 ## [6.2.1](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.2.0...v6.2.1) (2017-11-18)
 
