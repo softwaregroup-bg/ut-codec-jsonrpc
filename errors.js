@@ -1,7 +1,7 @@
 'use strict';
 module.exports = ({defineError, getError, fetchErrors}) => {
     if (!getError('jsonRPCCodec')) {
-        const jsonRPC = defineError('jsonRPCCodec');
+        const jsonRPC = defineError('jsonRPCCodec', null, 'JSON RPC generic');
         const invalidJson = defineError('invalidJson', jsonRPC, 'Invalid json');
 
         defineError('invalidVersion', invalidJson, 'Invalid jsonrpc version');
