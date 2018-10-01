@@ -101,6 +101,6 @@ module.exports = class JsonRpc {
                 json.error = msg;
                 break;
         }
-        return new Buffer(JSON.stringify(json), this.encoding);
+        return Buffer.from(JSON.stringify(json), this.encoding);
     }
 };
