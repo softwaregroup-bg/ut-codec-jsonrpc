@@ -39,21 +39,21 @@ module.exports = class JsonRpc {
         const json = this.parseJson(packet);
 
         if (json.jsonrpc !== this.version) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidVersion']({message: `Expected version ${this.version} but received ${json.jsonrpc}`});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidVersion'](`Expected version ${this.version} but received ${json.jsonrpc}`);
         } else if (!this.nullId && json.id === null) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']({message: 'Received null id value. nullId option is set to false'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']('Received null id value. nullId option is set to false');
         } else if (!['string', 'number', 'undefined'].includes(typeof json.id)) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']({message: 'Received Invalid id type'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']('Received Invalid id type');
         } else if (!this.fractionalId && typeof json.id === 'number' && json.id % 1 > 0) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']({message: 'Received fractional number as id. fractionalId option is set to false'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']('Received fractional number as id. fractionalId option is set to false');
         } else if (json.id === '') {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']({message: 'Received empty id'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']('Received empty id');
         } else if (json.id === undefined && typeof json.params !== 'object') {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidPayload']({message: 'Received notification with missing or invalid payload member'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidPayload']('Received notification with missing or invalid payload member');
         } else if (typeof json.params !== 'object' && typeof json.result !== 'object' && typeof json.error !== 'object') {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidPayload']({message: 'Received invalid payload'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidPayload']('Received invalid payload');
         } else if (['params', 'result', 'error'].filter(key => !!json[key]).length > 1) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidPayload']({message: 'Received more than one payload member'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidPayload']('Received more than one payload member');
         }
 
         const payloadMember = ['params', 'result', 'error'].find(key => key in json);
@@ -66,7 +66,7 @@ module.exports = class JsonRpc {
         }[json.id ? payloadMember : 'notification'];
         if ($meta.mtid === 'request') {
             if (typeof json.method !== 'string' || json.method === '') {
-                throw this.errors['jsonRPCCodec.invalidJson.invalidMethod']({message: 'Received invalid method type or empty'});
+                throw this.errors['jsonRPCCodec.invalidJson.invalidMethod']('Received invalid method type or empty');
             }
             $meta.method = json.method;
         }
@@ -75,9 +75,9 @@ module.exports = class JsonRpc {
 
     encode(msg = {}, $meta, context) {
         if (($meta.mtid === 'error' || $meta.mtid === 'response') && !$meta.trace) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']({message: 'Cannot send response without trace'});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidMessageID']('Cannot send response without trace');
         } else if (!$meta.method) {
-            throw this.errors['jsonRPCCodec.invalidJson.invalidMethod']({});
+            throw this.errors['jsonRPCCodec.invalidJson.invalidMethod']();
         }
         const json = {
             jsonrpc: this.version,
