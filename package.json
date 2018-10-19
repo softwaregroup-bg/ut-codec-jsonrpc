@@ -1,6 +1,6 @@
 {
   "name": "ut-codec-jsonrpc",
-  "version": "6.4.0",
+  "version": "7.0.0-rc-dss.0",
   "main": "./index.js",
   "peerDependencies": {
     "ut-error": "^5.4.9"
