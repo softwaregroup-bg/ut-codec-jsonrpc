@@ -1,6 +1,6 @@
 {
   "name": "ut-codec-jsonrpc",
-  "version": "7.0.0-rc-dss.2",
+  "version": "7.0.0-rc-dss.3",
   "main": "./index.js",
   "devDependencies": {
     "tap": "^12.0.1",
