@@ -1,3 +1,14 @@
+# [7.0.0](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.3.0...v7.0.0) (2019-10-01)
+
+
+### Bug Fixes
+
+* branch name ([178903c](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/commit/178903c))
+* ignore package-lock ([1d7fe21](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/commit/1d7fe21))
+* ut-error deprecations ([9ba7566](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/commit/9ba7566))
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.2.1...v6.3.0) (2018-04-17)
 
