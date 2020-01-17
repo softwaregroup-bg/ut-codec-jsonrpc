@@ -1,3 +1,7 @@
+## [7.0.1](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v7.0.0...v7.0.1) (2020-01-17)
+
+
+
 # [7.0.0](https://github.com/softwaregroup-bg/ut-codec-jsonrpc/compare/v6.3.0...v7.0.0) (2019-10-01)
 
 
